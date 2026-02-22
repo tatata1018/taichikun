@@ -1,3 +1,3 @@
 # taichikun
 たいちくんのリポジトリ
-sssssS
+ssssaaaaaaa

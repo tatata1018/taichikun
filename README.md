@@ -1,3 +1,0 @@
-# taichikun
-たいちくんのリポジトリ
-ssssaaaaaaa

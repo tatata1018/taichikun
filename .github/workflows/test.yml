@@ -15,10 +15,10 @@ jobs:
 
       - name: Run SQL
         run: |
-          python -c "
-import duckdb
-cnt = duckdb.query(open('test.sql').read()).fetchone()[0]
-print('NG件数:', cnt)
-import sys
-sys.exit(1) if cnt != 0 else print('OK')
-"
+          python <<EOF
+          import duckdb
+          cnt = duckdb.query(open('test.sql').read()).fetchone()[0]
+          print('NG件数:', cnt)
+          import sys
+          sys.exit(1) if cnt != 0 else print('OK')
+          EOF

@@ -1,0 +1,24 @@
+name: SQL Test
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install duckdb
+        run: pip install duckdb
+
+      - name: Run SQL
+        run: |
+          python -c "
+import duckdb
+cnt = duckdb.query(open('test.sql').read()).fetchone()[0]
+print('NG件数:', cnt)
+import sys
+sys.exit(1) if cnt != 0 else print('OK')
+"
